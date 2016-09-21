@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7325E6E21D90530300F9F090 /* libmozjs-45.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7325E6E01D90530300F9F090 /* libmozjs-45.dylib */; };
 		7350F9FD1D89B44200E199C0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7350F9FC1D89B44200E199C0 /* main.cpp */; };
 		7350FA071D89B98700E199C0 /* calc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7350FA051D89B98700E199C0 /* calc.cpp */; };
 		7350FA091D89BB4C00E199C0 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7350FA081D89BB4C00E199C0 /* libcurl.a */; };
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7325E6E01D90530300F9F090 /* libmozjs-45.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libmozjs-45.dylib"; path = "../../../../../usr/local/Cellar/spidermonkey45/45.0.2/lib/libmozjs-45.dylib"; sourceTree = "<group>"; };
 		7350F9F91D89B44200E199C0 /* zippy_dl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zippy_dl; sourceTree = BUILT_PRODUCTS_DIR; };
 		7350F9FC1D89B44200E199C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7350FA051D89B98700E199C0 /* calc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calc.cpp; sourceTree = "<group>"; };
@@ -38,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7350FA091D89BB4C00E199C0 /* libcurl.a in Frameworks */,
+				7325E6E21D90530300F9F090 /* libmozjs-45.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +50,7 @@
 		7350F9F01D89B44200E199C0 = {
 			isa = PBXGroup;
 			children = (
+				7325E6E01D90530300F9F090 /* libmozjs-45.dylib */,
 				7350FA081D89BB4C00E199C0 /* libcurl.a */,
 				7350F9FB1D89B44200E199C0 /* zippy_dl */,
 				7350F9FA1D89B44200E199C0 /* Products */,
@@ -97,7 +101,7 @@
 		7350F9F11D89B44200E199C0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = JetHare;
 				TargetAttributes = {
 					7350F9F81D89B44200E199C0 = {
@@ -140,7 +144,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -149,8 +153,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -158,7 +164,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -178,6 +184,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"/usr/local/include/mozjs-45\"";
 			};
 			name = Debug;
 		};
@@ -186,7 +193,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -195,8 +202,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -204,7 +213,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -217,6 +226,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"/usr/local/include/mozjs-45\"";
 			};
 			name = Release;
 		};
@@ -227,6 +237,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
 					/usr/local/Cellar/curl/7.50.3/lib,
+					/usr/local/Cellar/spidermonkey45/45.0.2/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -239,6 +250,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
 					/usr/local/Cellar/curl/7.50.3/lib,
+					/usr/local/Cellar/spidermonkey45/45.0.2/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
