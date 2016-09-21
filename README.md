@@ -1,4 +1,5 @@
 # zippy_dl
 A simple program to download files from zippyshare.
 
-I'll use a real javascript engine in next version so it could work properly.
+Getting the file url by issuing command, so you could change to your favorate js engine in the main.cpp.
+I'll add options to change that in the future.
