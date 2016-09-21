@@ -119,7 +119,7 @@ int dl_zippy(std::string zippy_page_url, std::string jsapp)
         }
         else if(line.find("dlbutton") != std::string::npos)
         {
-            int eq;
+            int eq = 0;
             try{
                 UNTIL(line.at(eq++) == '=');
             } catch (const std::out_of_range& oor){
