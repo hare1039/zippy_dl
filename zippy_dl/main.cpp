@@ -9,8 +9,8 @@
 #include <cstdio>
 #include <cstring>
 
-#include <jsapi.h>
-#include <js/Initialization.h>
+//#include <jsapi.h>
+//#include <js/Initialization.h>
 
 #include <curl/curl.h>
 #include "calc.hpp"
@@ -19,13 +19,14 @@
 #define FAILED -1
 
 // spidermonkey
+/*
 JSRuntime * runtime;
 bool spidermonkey_init()
 {
     atexit([]{JS_DestroyRuntime(runtime);});
     atexit(JS_ShutDown);
     return JS_Init() && [&]{runtime = JS_NewRuntime(8192 * 16); return runtime != NULL ;}();
-}
+}*/
 
 
 // curl
