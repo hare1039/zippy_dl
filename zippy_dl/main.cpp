@@ -139,12 +139,13 @@ int dl_zippy(std::string zippy_page_url, std::string jsapp)
         script.append(line + "\n");
     }UNTIL(line.find("console") != std::string::npos);
     
-    std::ofstream ofs("zippy_dl_url.js");
+    std::string js_name = "zippy_dl_url_" + std::to_string(std::rand() * std::rand() * std::rand()) + ".js";
+    std::ofstream ofs(js_name);
     ofs << script << std::endl;
     ofs.close();
     zippy_file_url.append(zippy_page_url.substr(0, zippy_page_url.find('/', 8)))// 8 is to aovid 'http://' <<-- this
-                  .append(exec([&]{ return jsapp + " zippy_dl_url.js";}().c_str()));
-    std::remove("zippy_dl_url.js"); // delete file
+                  .append(exec([&]{ return jsapp + " " + js_name;}().c_str()));
+    std::remove(js_name.c_str()); // delete file
     
     
     
@@ -173,6 +174,7 @@ int dl_zippy(std::string zippy_page_url, std::string jsapp)
 int main(int argc, char *argv[])
 {
     //if(! spidermonkey_init()) exit(1);
+    std::srand(static_cast<unsigned int> (std::time(0)));
     std::vector<std::string> zippy_url;
     for(int i=1; i<argc; i++)
         zippy_url.push_back(std::string(argv[i]));
