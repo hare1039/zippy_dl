@@ -13,10 +13,10 @@
 //#include <js/Initialization.h>
 
 #include <curl/curl.h>
-#include "calc.hpp"
 
 #define SUCCESS 0
 #define FAILED -1
+#define UNTIL(x) while(!(x))
 
 // spidermonkey
 /*
@@ -94,6 +94,7 @@ int dl_zippy(std::string zippy_page_url, std::string jsapp)
                 cur = NULL;
                 break;
             }
+        std::cout << "no JSESSIONID found, strange\n";
     }
     
     curl_easy_cleanup(handle);
