@@ -81,9 +81,11 @@ struct js_config
                 else
                 {
                     std::cout << "Which is your js interpreter:\n"
-                    << "[1] spidermonkey\n"
-                    << "[2] nodejs\n"
-                    << "[3] other       : ";
+                              << "[1] spidermonkey\n"
+                              << "[2] nodejs\n"
+                              << "[3] phantomjs\n"
+                              << "[4] other       : ";
+                    
                     std::cin >> ans;
                     switch(ans[0])
                     {
@@ -94,9 +96,13 @@ struct js_config
                             
                         case '2':
                             new_config << "prefix=js" << std::endl
-                                       << "suffix=process.exit(1)" << std::endl;
+                                       << "suffix=process.exit(0)" << std::endl;
                             break;
                             
+                        case '3':
+                            new_config << "prefix=phantomjs" << std::endl
+                                       << "suffix=phantom.exit(0);" << std::endl;
+                            break;
                         default:
                         {
                             std::string s;
@@ -148,7 +154,6 @@ int dl_zippy(std::string zippy_page_url)
     if(!handle)
         return FAILED;
     
-    //auto itos = [](int i){std::stringstream ss; ss << i; std::string s; ss >> s; return s;};
     
     curl_easy_setopt(handle, CURLOPT_URL, zippy_page_url.c_str());
     curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, writer);
@@ -179,7 +184,7 @@ int dl_zippy(std::string zippy_page_url)
                 cur = NULL;
                 break;
             }
-        std::cout << "no JSESSIONID found, strange\n";
+        std::cerr << "no JSESSIONID found, strange\n";
     }
     
     curl_easy_cleanup(handle);
@@ -224,7 +229,7 @@ int dl_zippy(std::string zippy_page_url)
         script.append(line + "\n");
     }UNTIL(line.find("console") != std::string::npos);
     
-    std::string js_name = "zippy_dl_url_" + std::to_string(std::rand() * std::hash<std::thread::id>()
+    std::string js_name = "/tmp/zippy_dl_url_" + std::to_string(std::rand() * std::hash<std::thread::id>()
                                                           (std::this_thread::get_id())) + ".js";
     std::ofstream ofs(js_name);
     ofs << script << std::endl;
