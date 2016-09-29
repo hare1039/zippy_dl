@@ -1,13 +1,14 @@
 # zippy_dl
 A simple program to download files from zippyshare.
 
-[How to use]
+# [How to use]
 example:
 zippy_dl 
+
 http://www53.zippyshare.com/v/some/file.html 
 http://www53.zippyshare.com/v/some_other/file.html
 
-[build]
+# [build]
 I use curl, so link the libcurl when you compile.
 
 And it need wget and a js interpreter too.
