@@ -273,8 +273,8 @@ int main(int argc, char *argv[])
     if ((homedir = std::string(getenv("HOME"))) == "")
         homedir = std::string(getpwuid(getuid())->pw_dir);
     conf_filepath = homedir + "/.zippy_dl.config";
-    
-    while ((option_code = getopt(argc, argv, "c:h")) != -1)
+    std::vector<std::string> zippy_url;
+    while ((option_code = getopt(argc, argv, "c:hl:")) != -1)
     {
         switch(option_code)
         {
@@ -287,8 +287,22 @@ int main(int argc, char *argv[])
                 std::cout << "usage:\n"
                           << "  zippy_dl [options] zippy-urls\n"
                           << "options:\n"
-                          << "  -c string    -- for configure file, default : ~/.zippy_dl.config\n";
+                          << "  -c string    -- for configure file, default : ~/.zippy_dl.config\n"
+                          << "  -l string    -- read from list\n";
                 break;
+                
+            case 'l':
+            {
+                std::ifstream ifs(optarg);
+                if(!ifs.is_open())
+                {
+                    std::cerr << optarg <<" can't open\n";
+                    exit(-1);
+                }
+                std::string s;
+                while(ifs >> s)
+                    zippy_url.push_back(s);
+            }
             case ':':
                 std::cout << optopt << " without filename\n";
                 break;
@@ -298,7 +312,6 @@ int main(int argc, char *argv[])
                 break;
         }
     }
-    std::vector<std::string> zippy_url;
     for(;optind<argc; optind++)
         zippy_url.push_back(std::string(argv[optind]));
     
