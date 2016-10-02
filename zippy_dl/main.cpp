@@ -13,24 +13,12 @@
 #include <sys/types.h>
 #include <pwd.h>
 
-//#include <jsapi.h>
-//#include <js/Initialization.h>
 
 #include <curl/curl.h>
 
 #define SUCCESS 0
 #define FAILED -1
 #define UNTIL(x) while(!(x))
-
-// spidermonkey
-/*
-JSRuntime * runtime;
-bool spidermonkey_init()
-{
-    atexit([]{JS_DestroyRuntime(runtime);});
-    atexit(JS_ShutDown);
-    return JS_Init() && [&]{runtime = JS_NewRuntime(8192 * 16); return runtime != NULL ;}();
-}*/
 
 
 // curl
@@ -236,22 +224,10 @@ int dl_zippy(std::string zippy_page_url)
     ofs.close();
     zippy_file_url.append(zippy_page_url.substr(0, zippy_page_url.find('/', 8)))// 8 is to aovid 'http://' <<-- this
                   .append(exec([&]{ return config.prefix + " " + js_name;}().c_str()));
-    std::remove(js_name.c_str()); // delete file
+    //std::remove(js_name.c_str()); // delete file
     
     
     
-    //JSContext * context = JS_NewContext(runtime, 8192);
-    //JS::CompileOptions options(context);
-    
-    //char16_t* script_sender = static_cast<char16_t *>(js_malloc(sizeof(char16_t) * script.length())); <<< cause problem
-    //for(int i=0; i<script.length(); i++)
-        //script_sender[i] = script[i];
-    //JS::SourceBufferHolder buf(script_sender, script.length(), JS::SourceBufferHolder::GiveOwnership);
-    
-    //JS::Evaluate(context, options, buf, val);
-    
-    //JS_free(context, script_sender);
-    //JS_DestroyContext(context);
     
     
     system([&](){return
