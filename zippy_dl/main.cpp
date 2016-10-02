@@ -16,6 +16,7 @@
 
 #include <curl/curl.h>
 
+#include "mujs_bridge.hpp"
 #define SUCCESS 0
 #define FAILED -1
 #define UNTIL(x) while(!(x))
@@ -204,7 +205,7 @@ int dl_zippy(std::string zippy_page_url)
             } catch (const std::out_of_range& oor){
                 std::cerr << "something strange occured: " << oor.what() << '\n';
             }
-            line = "console.log(" + line.substr(eq, line.length() - eq - 1) + "); \n " + config.suffix +";\n";
+            line = "var result_ = " + line.substr(eq, line.length() - eq - 1) + "; \n ";
         }
         else if(line.find("document") != std::string::npos)
         {
@@ -215,7 +216,7 @@ int dl_zippy(std::string zippy_page_url)
             line = line_tmp;
         }
         script.append(line + "\n");
-    }UNTIL(line.find("console") != std::string::npos);
+    }UNTIL(line.find("result_") != std::string::npos);
     
     std::string js_name = "/tmp/zippy_dl_url_" + std::to_string(std::rand() * std::hash<std::thread::id>()
                                                           (std::this_thread::get_id())) + ".js";
@@ -224,15 +225,19 @@ int dl_zippy(std::string zippy_page_url)
     ofs.close();
     zippy_file_url.append(zippy_page_url.substr(0, zippy_page_url.find('/', 8)))// 8 is to aovid 'http://' <<-- this
                   .append(exec([&]{ return config.prefix + " " + js_name;}().c_str()));
+    
+    std::cout << script << std::endl << std::endl;
+    tinyjs_bridge::js_get_url(script);
+    
     //std::remove(js_name.c_str()); // delete file
     
     
     
     
     
-    system([&](){return
+    /*system([&](){return
         "wget " + zippy_file_url + " --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie +
-        "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/47.0'";}().c_str());
+        "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/47.0'";}().c_str());*/
     
     return SUCCESS;
 }

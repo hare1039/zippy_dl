@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1A25BD27907A62A4DE3FCDBD5AE97C31F1C43379",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2B2DE541028E6B0E61071EBEC3F9FC5E957D1E82" : 9223372036854775807,
+    "1A25BD27907A62A4DE3FCDBD5AE97C31F1C43379" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FF4930FD-0544-4C23-8C6D-94992690D8D2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2B2DE541028E6B0E61071EBEC3F9FC5E957D1E82" : "zippy_dl\/tiny-js\/",
+    "1A25BD27907A62A4DE3FCDBD5AE97C31F1C43379" : "zippy_dl\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "zippy_dl",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "zippy_dl.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hare1039\/zippy_dl.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1A25BD27907A62A4DE3FCDBD5AE97C31F1C43379"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gfwilliams\/tiny-js.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B2DE541028E6B0E61071EBEC3F9FC5E957D1E82"
+    }
+  ]
+}
