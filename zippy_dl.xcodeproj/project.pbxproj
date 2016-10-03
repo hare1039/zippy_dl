@@ -56,6 +56,9 @@
 		7350FA081D89BB4C00E199C0 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../../../../usr/local/Cellar/curl/7.50.3/lib/libcurl.a; sourceTree = "<group>"; };
 		735750571DA203B60010DCC2 /* astnames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = astnames.h; path = mujs/astnames.h; sourceTree = "<group>"; };
 		735750581DA203F40010DCC2 /* opnames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opnames.h; path = mujs/opnames.h; sourceTree = "<group>"; };
+		7357505A1DA22FD00010DCC2 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		7357505B1DA231960010DCC2 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		7357505C1DA233170010DCC2 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = mujs/CMakeLists.txt; sourceTree = "<group>"; };
 		73F563EE1DA105C200F809F2 /* mujs_bridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mujs_bridge.cpp; sourceTree = "<group>"; };
 		73F563EF1DA105C200F809F2 /* mujs_bridge.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mujs_bridge.hpp; sourceTree = "<group>"; };
 		73F564241DA17C8F00F809F2 /* jsi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsi.h; path = mujs/jsi.h; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 			children = (
 				73F563FF1DA178A200F809F2 /* mujs */,
 				7350FA081D89BB4C00E199C0 /* libcurl.a */,
+				7357505A1DA22FD00010DCC2 /* CMakeLists.txt */,
 				7350F9FB1D89B44200E199C0 /* zippy_dl */,
 				7350F9FA1D89B44200E199C0 /* Products */,
 			);
@@ -130,6 +134,7 @@
 		7350F9FB1D89B44200E199C0 /* zippy_dl */ = {
 			isa = PBXGroup;
 			children = (
+				7357505B1DA231960010DCC2 /* CMakeLists.txt */,
 				73F563EE1DA105C200F809F2 /* mujs_bridge.cpp */,
 				73F563EF1DA105C200F809F2 /* mujs_bridge.hpp */,
 				7350F9FC1D89B44200E199C0 /* main.cpp */,
@@ -140,6 +145,7 @@
 		73F563FF1DA178A200F809F2 /* mujs */ = {
 			isa = PBXGroup;
 			children = (
+				7357505C1DA233170010DCC2 /* CMakeLists.txt */,
 				735750571DA203B60010DCC2 /* astnames.h */,
 				73F564501DA180A800F809F2 /* AUTHORS */,
 				73F564511DA180C900F809F2 /* jsarray.c */,
