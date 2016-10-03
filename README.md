@@ -7,11 +7,14 @@ example:
 zippy_dl http://www53.zippyshare.com/v/some/file.html http://www53.zippyshare.com/v/some_other/file.html
 
 # [build]
-I use curl, so link the libcurl when you compile.
 
-And it need wget and a js interpreter too.
+get sourse code by 
+git clone https://github.com/hare1039/zippy_dl.git
 
-respberry pi3(raspbian) example:
+cd zippy_dl && mkdir build && cd build
 
-g++ main.cpp -pthread -std=c++14 -L/usr/lib/arm-linux-gnueabihf/ -lcurl-nss -O2 -o zippy_dl
+cmake ..
 
+And that's it!
+
+You can find the binary inside build/zippy_dl, and you can move it anywhere you like!
