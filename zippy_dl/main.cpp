@@ -10,10 +10,6 @@
 #include <cstring>
 
 #include <unistd.h>
-#include <sys/types.h>
-#include <pwd.h>
-
-
 #include <curl/curl.h>
 
 #include "mujs_bridge.hpp"
@@ -72,7 +68,6 @@ int dl_zippy(std::string zippy_page_url)
                 cur = NULL;
                 break;
             }
-            std::cout << s << std::endl;
         }
         
         std::cerr << "no JSESSIONID found, strange\n";
@@ -139,30 +134,20 @@ int dl_zippy(std::string zippy_page_url)
 
 int main(int argc, char *argv[])
 {
-    //if(! spidermonkey_init()) exit(1);
     std::srand(static_cast<unsigned int> (std::time(0)));
     extern char *optarg;
     extern int optind, opterr, optopt;
     int option_code;
-    std::string conf_filepath, homedir;
-    if ((homedir = std::string(getenv("HOME"))) == "")
-        homedir = std::string(getpwuid(getuid())->pw_dir);
-    conf_filepath = homedir + "/.zippy_dl.config";
+    
     std::vector<std::string> zippy_url;
-    while ((option_code = getopt(argc, argv, "c:hl:")) != -1)
+    while ((option_code = getopt(argc, argv, "hl:")) != -1)
     {
         switch(option_code)
         {
-            case 'c':
-            {
-                conf_filepath = optarg;
-                break;
-            }
             case 'h':
                 std::cout << "usage:\n"
-                          << "  zippy_dl [options] zippy-urls\n"
+                          << "  zippy_dl [options] URL [URLs...]\n"
                           << "options:\n"
-                          << "  -c string    -- for configure file, default : ~/.zippy_dl.config\n"
                           << "  -l string    -- read from list\n";
                 break;
                 
