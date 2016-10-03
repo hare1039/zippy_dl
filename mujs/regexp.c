@@ -1104,7 +1104,7 @@ int regexec(Reprog *prog, const char *sp, Resub *sub, int eflags)
 }
 
 #ifdef TEST
-int main(int argc, char **argv)
+int __main__(int argc, char **argv)
 {
     const char *error;
     const char *s;

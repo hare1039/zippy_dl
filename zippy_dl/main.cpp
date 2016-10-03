@@ -32,108 +32,6 @@ size_t writer(char *data, size_t size, size_t nmemb, std::string *writer_data)
     return size * nmemb;
 }
 
-std::string exec(const char* cmd)
-{
-    char buffer[150];
-    std::string result = "";
-    std::shared_ptr<FILE> pipe(popen(cmd, "r"), pclose);
-    if (!pipe) throw std::runtime_error("popen() failed!");
-    while (!feof(pipe.get()))
-        if (fgets(buffer, 150, pipe.get()) != NULL)
-            result += buffer;
-    
-    return result;
-}
-
-struct js_config
-{
-    std::string prefix, suffix, homedir;
-    js_config(){}
-    
-    void open_conf(std::string file_path)
-    {
-        std::ifstream config(file_path);
-        if(!config.is_open())
-        {
-            std::cerr << "configure file can't open '" << file_path
-                      << "' create one in home dir ?[y/n]";
-            std::string ans; std::cin >> ans;
-            if(ans == "y")
-            {
-                if ((homedir = std::string(getenv("HOME"))) == "")
-                    homedir = std::string(getpwuid(getuid())->pw_dir);
-                
-                std::ofstream new_config(homedir + "/.zippy_dl.config");
-                if(!new_config.is_open())
-                    std::cerr << "file " << homedir + "/.zippy_dl.config" << " can't open\n"
-                              << "error: " << strerror(errno) << "\n";
-                else
-                {
-                    std::cout << "Which is your js interpreter:\n"
-                              << "[1] spidermonkey\n"
-                              << "[2] nodejs\n"
-                              << "[3] phantomjs\n"
-                              << "[4] other       : ";
-                    
-                    std::cin >> ans;
-                    switch(ans[0])
-                    {
-                        case '1':
-                            new_config << "prefix=js" << std::endl
-                                       << "suffix=quit()" << std::endl;
-                            break;
-                            
-                        case '2':
-                            new_config << "prefix=js" << std::endl
-                                       << "suffix=process.exit(0)" << std::endl;
-                            break;
-                            
-                        case '3':
-                            new_config << "prefix=phantomjs" << std::endl
-                                       << "suffix=phantom.exit(0);" << std::endl;
-                            break;
-                        default:
-                        {
-                            std::string s;
-                            std::cout << "what's the prefix: "; std::cin >> s; new_config << "prefix=" + s + "\n";
-                            std::cout << "what's the suffix: "; std::cin >> s; new_config << "suffix=" + s + "\n";
-                        }
-                    }
-                    new_config.close();
-                    std::cout << "new config file saved at " + homedir + "/.zippy_dl.config\n";
-                    
-                    config.close();
-                    config.open(homedir + "/.zippy_dl.config");
-                }
-            }
-            else
-                exit(0);
-        }
-        std::string line;
-        while(std::getline(config, line))
-        {
-            for(int i=0; i<line.length(); i++)
-            {
-                if(line.at(i) == '#')
-                    break;
-                else if(line.at(i) == '=')
-                {
-                    if(line.substr(0, i) == "prefix")
-                        prefix = line.substr(i + 1);
-                    else if(line.substr(0, i) =="suffix")
-                        suffix = line.substr(i + 1);
-                    else
-                        std::cerr << "unknown config: " << line << std::endl;
-                    break;
-                }
-            }
-        }
-    }
-};
-
-js_config config;
-
-
 int dl_zippy(std::string zippy_page_url)
 {
     
@@ -148,7 +46,7 @@ int dl_zippy(std::string zippy_page_url)
     curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, writer);
     curl_easy_setopt(handle, CURLOPT_WRITEDATA, &buffer);
     curl_easy_setopt(handle, CURLOPT_COOKIEFILE, "");
-    curl_easy_setopt(handle, CURLOPT_VERBOSE, 0);
+    curl_easy_setopt(handle, CURLOPT_VERBOSE, 1);
     curl_easy_setopt(handle, CURLOPT_USERAGENT, "Mozilla/5.0 Gecko/20100101 Firefox/47.0");
     
     CURLcode res = curl_easy_perform(handle);
@@ -166,6 +64,7 @@ int dl_zippy(std::string zippy_page_url)
         
         std::string s;
         while(ss >> s)
+        {
             if(s == "JSESSIONID")
             {
                 ss >> s;
@@ -173,6 +72,9 @@ int dl_zippy(std::string zippy_page_url)
                 cur = NULL;
                 break;
             }
+            std::cout << s << std::endl;
+        }
+        
         std::cerr << "no JSESSIONID found, strange\n";
     }
     
@@ -218,26 +120,18 @@ int dl_zippy(std::string zippy_page_url)
         script.append(line + "\n");
     }UNTIL(line.find("result_") != std::string::npos);
     
-    std::string js_name = "/tmp/zippy_dl_url_" + std::to_string(std::rand() * std::hash<std::thread::id>()
-                                                          (std::this_thread::get_id())) + ".js";
-    std::ofstream ofs(js_name);
-    ofs << script << std::endl;
-    ofs.close();
+    
     zippy_file_url.append(zippy_page_url.substr(0, zippy_page_url.find('/', 8)))// 8 is to aovid 'http://' <<-- this
-                  .append(exec([&]{ return config.prefix + " " + js_name;}().c_str()));
-    
-    std::cout << script << std::endl << std::endl;
-    tinyjs_bridge::js_get_url(script);
-    
-    //std::remove(js_name.c_str()); // delete file
+                  .append(mujs_bridge::js_get_url(script, "result_"));
     
     
     
     
     
-    /*system([&](){return
+    
+    system([&](){return
         "wget " + zippy_file_url + " --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie +
-        "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/47.0'";}().c_str());*/
+        "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/47.0'";}().c_str());
     
     return SUCCESS;
 }
@@ -295,8 +189,6 @@ int main(int argc, char *argv[])
     }
     for(;optind<argc; optind++)
         zippy_url.push_back(std::string(argv[optind]));
-    
-    config.open_conf(conf_filepath);
     
     std::vector<std::thread *> sync_dl;
     for(auto i : zippy_url)

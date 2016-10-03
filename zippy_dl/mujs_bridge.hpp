@@ -12,12 +12,12 @@
 #include <iostream>
 extern "C"
 {
-    #include <mujs.h>
+    #include "mujs.h"
 }
 
-namespace tinyjs_bridge
+namespace mujs_bridge
 {
-    std::string js_get_url(std::string js_script);
+    std::string js_get_url(std::string js_script, std::string var_name);
 }
 
 #endif /* tinyjs_bridge_hpp */

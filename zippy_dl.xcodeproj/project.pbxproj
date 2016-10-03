@@ -23,7 +23,6 @@
 		73F5643D1DA17E7600F809F2 /* jsstate.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5643C1DA17E7600F809F2 /* jsstate.c */; };
 		73F5643F1DA17E8E00F809F2 /* jsstring.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5643E1DA17E8E00F809F2 /* jsstring.c */; };
 		73F564421DA17EB000F809F2 /* jsvalue.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564401DA17EB000F809F2 /* jsvalue.c */; };
-		73F564451DA17F0400F809F2 /* one.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564441DA17F0400F809F2 /* one.c */; };
 		73F564491DA17F5600F809F2 /* regexp.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564471DA17F5600F809F2 /* regexp.c */; };
 		73F5644C1DA17F7A00F809F2 /* utf.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5644A1DA17F7A00F809F2 /* utf.c */; };
 		73F5644E1DA17FA200F809F2 /* utftype.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5644D1DA17FA200F809F2 /* utftype.c */; };
@@ -55,6 +54,8 @@
 		7350F9F91D89B44200E199C0 /* zippy_dl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zippy_dl; sourceTree = BUILT_PRODUCTS_DIR; };
 		7350F9FC1D89B44200E199C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7350FA081D89BB4C00E199C0 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../../../../usr/local/Cellar/curl/7.50.3/lib/libcurl.a; sourceTree = "<group>"; };
+		735750571DA203B60010DCC2 /* astnames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = astnames.h; path = mujs/astnames.h; sourceTree = "<group>"; };
+		735750581DA203F40010DCC2 /* opnames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opnames.h; path = mujs/opnames.h; sourceTree = "<group>"; };
 		73F563EE1DA105C200F809F2 /* mujs_bridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mujs_bridge.cpp; sourceTree = "<group>"; };
 		73F563EF1DA105C200F809F2 /* mujs_bridge.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mujs_bridge.hpp; sourceTree = "<group>"; };
 		73F564241DA17C8F00F809F2 /* jsi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsi.h; path = mujs/jsi.h; sourceTree = "<group>"; };
@@ -76,14 +77,11 @@
 		73F564401DA17EB000F809F2 /* jsvalue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsvalue.c; path = mujs/jsvalue.c; sourceTree = "<group>"; };
 		73F564411DA17EB000F809F2 /* jsvalue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsvalue.h; path = mujs/jsvalue.h; sourceTree = "<group>"; };
 		73F564431DA17EE200F809F2 /* mujs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mujs.h; path = mujs/mujs.h; sourceTree = "<group>"; };
-		73F564441DA17F0400F809F2 /* one.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = one.c; path = mujs/one.c; sourceTree = "<group>"; };
-		73F564461DA17F2E00F809F2 /* opnames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = opnames.h; path = mujs/opnames.h; sourceTree = "<group>"; };
 		73F564471DA17F5600F809F2 /* regexp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = regexp.c; path = mujs/regexp.c; sourceTree = "<group>"; };
 		73F564481DA17F5600F809F2 /* regexp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = regexp.h; path = mujs/regexp.h; sourceTree = "<group>"; };
 		73F5644A1DA17F7A00F809F2 /* utf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = utf.c; path = mujs/utf.c; sourceTree = "<group>"; };
 		73F5644B1DA17F7A00F809F2 /* utf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utf.h; path = mujs/utf.h; sourceTree = "<group>"; };
 		73F5644D1DA17FA200F809F2 /* utftype.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = utftype.c; path = mujs/utftype.c; sourceTree = "<group>"; };
-		73F5644F1DA1808500F809F2 /* astnames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = astnames.h; path = mujs/astnames.h; sourceTree = "<group>"; };
 		73F564501DA180A800F809F2 /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AUTHORS; path = mujs/AUTHORS; sourceTree = "<group>"; };
 		73F564511DA180C900F809F2 /* jsarray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsarray.c; path = mujs/jsarray.c; sourceTree = "<group>"; };
 		73F564531DA180E000F809F2 /* jsboolean.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsboolean.c; path = mujs/jsboolean.c; sourceTree = "<group>"; };
@@ -142,7 +140,7 @@
 		73F563FF1DA178A200F809F2 /* mujs */ = {
 			isa = PBXGroup;
 			children = (
-				73F5644F1DA1808500F809F2 /* astnames.h */,
+				735750571DA203B60010DCC2 /* astnames.h */,
 				73F564501DA180A800F809F2 /* AUTHORS */,
 				73F564511DA180C900F809F2 /* jsarray.c */,
 				73F564531DA180E000F809F2 /* jsboolean.c */,
@@ -175,13 +173,12 @@
 				73F564401DA17EB000F809F2 /* jsvalue.c */,
 				73F564411DA17EB000F809F2 /* jsvalue.h */,
 				73F564431DA17EE200F809F2 /* mujs.h */,
-				73F564441DA17F0400F809F2 /* one.c */,
-				73F564461DA17F2E00F809F2 /* opnames.h */,
 				73F564471DA17F5600F809F2 /* regexp.c */,
 				73F564481DA17F5600F809F2 /* regexp.h */,
 				73F5644A1DA17F7A00F809F2 /* utf.c */,
 				73F5644B1DA17F7A00F809F2 /* utf.h */,
 				73F5644D1DA17FA200F809F2 /* utftype.c */,
+				735750581DA203F40010DCC2 /* opnames.h */,
 			);
 			name = mujs;
 			sourceTree = "<group>";
@@ -242,7 +239,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73F564451DA17F0400F809F2 /* one.c in Sources */,
 				73F5642D1DA17D6B00F809F2 /* jsnumber.c in Sources */,
 				73F564291DA17CE700F809F2 /* jslex.c in Sources */,
 				73F5643B1DA17E4000F809F2 /* jsrun.c in Sources */,
@@ -316,12 +312,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					/usr/local/include,
-					"\"$(SRCROOT)/mujs\"",
-				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -362,12 +355,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					/usr/local/include,
-					"\"$(SRCROOT)/mujs\"",
-				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/mujs\"";
