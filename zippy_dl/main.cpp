@@ -18,8 +18,18 @@
 #define UNTIL(x) while(!(x))
 
 
-// curl
-size_t writer(char *data, size_t size, size_t nmemb, std::string *writer_data)
+// curl get page
+size_t writer_get_page(char *data, size_t size, size_t nmemb, std::string *writer_data)
+{
+    if (writer_data == NULL)
+        return 0;
+    
+    writer_data->append(data, size*nmemb);
+    return size * nmemb;
+}
+
+// curl get file
+size_t writer_get_file(char *data, size_t size, size_t nmemb, std::string *writer_data)
 {
     if (writer_data == NULL)
         return 0;
@@ -30,7 +40,6 @@ size_t writer(char *data, size_t size, size_t nmemb, std::string *writer_data)
 
 int dl_zippy(std::string zippy_page_url)
 {
-    
     std::string buffer;
     CURL *handle = curl_easy_init();
     
@@ -39,7 +48,7 @@ int dl_zippy(std::string zippy_page_url)
     
     
     curl_easy_setopt(handle, CURLOPT_URL, zippy_page_url.c_str());
-    curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, writer);
+    curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, writer_get_page);
     curl_easy_setopt(handle, CURLOPT_WRITEDATA, &buffer);
     curl_easy_setopt(handle, CURLOPT_COOKIEFILE, "");
     curl_easy_setopt(handle, CURLOPT_VERBOSE, 1);
@@ -73,7 +82,7 @@ int dl_zippy(std::string zippy_page_url)
         std::cerr << "no JSESSIONID found, strange\n";
     }
     
-    curl_easy_cleanup(handle);
+    curl_easy_reset(handle);
     
     unsigned long script_pos_start = buffer.find("<script type=\"text/javascript\">", buffer.find("dlbutton")) +
                                                   strlen("<script type=\"text/javascript\">") + 1;
@@ -119,14 +128,21 @@ int dl_zippy(std::string zippy_page_url)
     zippy_file_url.append(zippy_page_url.substr(0, zippy_page_url.find('/', 8)))// 8 is to aovid 'http://' <<-- this
                   .append(mujs_bridge::js_get_url(script, "result_"));
     
+    curl_easy_setopt(handle, CURLOPT_URL, zippy_file_url.c_str());
+    curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, writer_get_page);
+    curl_easy_setopt(handle, CURLOPT_WRITEDATA, &buffer);
+    curl_easy_setopt(handle, CURLOPT_COOKIEFILE, "");
+    curl_easy_setopt(handle, CURLOPT_VERBOSE, 1);
+    curl_easy_setopt(handle, CURLOPT_USERAGENT, "Mozilla/5.0 Gecko/20100101 Firefox/47.0");
     
     
     
-    
-    
+    curl_easy_cleanup(handle);
     system([&](){return
         "wget " + zippy_file_url + " --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie +
         "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/47.0'";}().c_str());
+    
+    
     
     return SUCCESS;
 }
