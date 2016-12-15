@@ -1,16 +1,11 @@
-
 project(zippy_dl)
 FIND_PACKAGE(CURL REQUIRED)
 if(CURL_FOUND)
     include_directories(${CURL_INCLUDE_DIRS})
-    include_directories(${CMAKE_SOURCE_DIR}/mujs)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -std=c++14")
     if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
     endif()
-    add_executable(zippy_dl main.cpp mujs_bridge.cpp)
-
-    link_directories(${CMAKE_BINARY_DIR}/mujs)
-    target_link_libraries(zippy_dl mujs)
+    add_executable(zippy_dl main.cpp)
     target_link_libraries(zippy_dl ${CURL_LIBRARIES})
 endif()
