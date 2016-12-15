@@ -19,4 +19,4 @@ And that's it!
 
 You can find the binary inside build/zippy_dl, and you can move it anywhere you like!
 
-I use [MuJS](http://mujs.com/), many thanks. 
+I use phantomjs. Please make sure you could run `phantomjs` in shell.
