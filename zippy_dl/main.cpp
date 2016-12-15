@@ -107,12 +107,10 @@ int dl_zippy(std::string zippy_page_url)
     ofs.close();
 
     zippy_file_url.append(zippy_page_url.substr(0, zippy_page_url.find('/', 8)))// 8 is to aovid 'http://' <<-- this
-                  .append(exec([&]{ return "phantomjs " + name + ".js; " + "exit(0);";}().c_str()).substr(7) );
-    //std::remove(js_name.c_str()); // delete file
-
-    system([&](){return
-        "wget " + zippy_file_url + " --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie +
-        "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/49.0'";}().c_str());
+                  .append(exec(("phantomjs " + name + ".js; " + "exit 0;").c_str()).substr(7) );
+    std::remove((name + ".js").c_str()); // delete file
+    std::remove((name + ".html").c_str());
+    exec( ("wget " + zippy_file_url + " --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie + "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/49.0' 2>/dev/null && exit 0;").c_str() );
 
     return SUCCESS;
 }
