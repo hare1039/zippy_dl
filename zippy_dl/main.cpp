@@ -107,7 +107,7 @@ int dl_zippy(std::string zippy_page_url)
     ofs.close();
 
     zippy_file_url.append(zippy_page_url.substr(0, zippy_page_url.find('/', 8)))// 8 is to aovid 'http://' <<-- this
-                  .append(exec([&]{ return "phantomjs " + name + ".js";}().c_str()).substr(7) );
+                  .append(exec([&]{ return "phantomjs " + name + ".js; " + "exit(0);";}().c_str()).substr(7) );
     //std::remove(js_name.c_str()); // delete file
 
     system([&](){return
