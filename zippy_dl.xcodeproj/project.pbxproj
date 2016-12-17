@@ -8,34 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7350F9FD1D89B44200E199C0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7350F9FC1D89B44200E199C0 /* main.cpp */; };
-		7350FA091D89BB4C00E199C0 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7350FA081D89BB4C00E199C0 /* libcurl.a */; };
-		73F563F01DA105C200F809F2 /* mujs_bridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73F563EE1DA105C200F809F2 /* mujs_bridge.cpp */; };
-		73F564261DA17CC500F809F2 /* jsintern.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564251DA17CC500F809F2 /* jsintern.c */; };
-		73F564291DA17CE700F809F2 /* jslex.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564271DA17CE700F809F2 /* jslex.c */; };
-		73F5642B1DA17D3300F809F2 /* jsmath.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5642A1DA17D3300F809F2 /* jsmath.c */; };
-		73F5642D1DA17D6B00F809F2 /* jsnumber.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5642C1DA17D6B00F809F2 /* jsnumber.c */; };
-		73F5642F1DA17D9E00F809F2 /* jsobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5642E1DA17D9E00F809F2 /* jsobject.c */; };
-		73F564311DA17DB600F809F2 /* json.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564301DA17DB600F809F2 /* json.c */; };
-		73F564341DA17DD700F809F2 /* jsparse.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564321DA17DD700F809F2 /* jsparse.c */; };
-		73F564361DA17DFE00F809F2 /* jsproperty.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564351DA17DFE00F809F2 /* jsproperty.c */; };
-		73F564381DA17E2600F809F2 /* jsregexp.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564371DA17E2600F809F2 /* jsregexp.c */; };
-		73F5643B1DA17E4000F809F2 /* jsrun.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564391DA17E4000F809F2 /* jsrun.c */; };
-		73F5643D1DA17E7600F809F2 /* jsstate.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5643C1DA17E7600F809F2 /* jsstate.c */; };
-		73F5643F1DA17E8E00F809F2 /* jsstring.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5643E1DA17E8E00F809F2 /* jsstring.c */; };
-		73F564421DA17EB000F809F2 /* jsvalue.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564401DA17EB000F809F2 /* jsvalue.c */; };
-		73F564491DA17F5600F809F2 /* regexp.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564471DA17F5600F809F2 /* regexp.c */; };
-		73F5644C1DA17F7A00F809F2 /* utf.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5644A1DA17F7A00F809F2 /* utf.c */; };
-		73F5644E1DA17FA200F809F2 /* utftype.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5644D1DA17FA200F809F2 /* utftype.c */; };
-		73F564521DA180C900F809F2 /* jsarray.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564511DA180C900F809F2 /* jsarray.c */; };
-		73F564541DA180E000F809F2 /* jsboolean.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564531DA180E000F809F2 /* jsboolean.c */; };
-		73F564571DA180F900F809F2 /* jsbuiltin.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564551DA180F900F809F2 /* jsbuiltin.c */; };
-		73F5645A1DA1811600F809F2 /* jscompile.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564581DA1811600F809F2 /* jscompile.c */; };
-		73F5645C1DA1814000F809F2 /* jsdate.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5645B1DA1814000F809F2 /* jsdate.c */; };
-		73F5645E1DA1815700F809F2 /* jsdtoa.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5645D1DA1815700F809F2 /* jsdtoa.c */; };
-		73F564601DA1818C00F809F2 /* jsdump.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F5645F1DA1818C00F809F2 /* jsdump.c */; };
-		73F564621DA181A000F809F2 /* jserror.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564611DA181A000F809F2 /* jserror.c */; };
-		73F564641DA181B900F809F2 /* jsfunction.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564631DA181B900F809F2 /* jsfunction.c */; };
-		73F564661DA181D200F809F2 /* jsgc.c in Sources */ = {isa = PBXBuildFile; fileRef = 73F564651DA181D200F809F2 /* jsgc.c */; };
+		73571CE31E055F6E00D90158 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73571CE21E055F6E00D90158 /* libcurl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,51 +26,9 @@
 /* Begin PBXFileReference section */
 		7350F9F91D89B44200E199C0 /* zippy_dl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zippy_dl; sourceTree = BUILT_PRODUCTS_DIR; };
 		7350F9FC1D89B44200E199C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		7350FA081D89BB4C00E199C0 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../../../../usr/local/Cellar/curl/7.50.3/lib/libcurl.a; sourceTree = "<group>"; };
-		735750571DA203B60010DCC2 /* astnames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = astnames.h; path = mujs/astnames.h; sourceTree = "<group>"; };
-		735750581DA203F40010DCC2 /* opnames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opnames.h; path = mujs/opnames.h; sourceTree = "<group>"; };
+		73571CE21E055F6E00D90158 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../../../../usr/local/Cellar/curl/7.51.0/lib/libcurl.a; sourceTree = "<group>"; };
 		7357505A1DA22FD00010DCC2 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		7357505B1DA231960010DCC2 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
-		7357505C1DA233170010DCC2 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = mujs/CMakeLists.txt; sourceTree = "<group>"; };
-		73F563EE1DA105C200F809F2 /* mujs_bridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mujs_bridge.cpp; sourceTree = "<group>"; };
-		73F563EF1DA105C200F809F2 /* mujs_bridge.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mujs_bridge.hpp; sourceTree = "<group>"; };
-		73F564241DA17C8F00F809F2 /* jsi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsi.h; path = mujs/jsi.h; sourceTree = "<group>"; };
-		73F564251DA17CC500F809F2 /* jsintern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsintern.c; path = mujs/jsintern.c; sourceTree = "<group>"; };
-		73F564271DA17CE700F809F2 /* jslex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jslex.c; path = mujs/jslex.c; sourceTree = "<group>"; };
-		73F564281DA17CE700F809F2 /* jslex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jslex.h; path = mujs/jslex.h; sourceTree = "<group>"; };
-		73F5642A1DA17D3300F809F2 /* jsmath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsmath.c; path = mujs/jsmath.c; sourceTree = "<group>"; };
-		73F5642C1DA17D6B00F809F2 /* jsnumber.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsnumber.c; path = mujs/jsnumber.c; sourceTree = "<group>"; };
-		73F5642E1DA17D9E00F809F2 /* jsobject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsobject.c; path = mujs/jsobject.c; sourceTree = "<group>"; };
-		73F564301DA17DB600F809F2 /* json.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = json.c; path = mujs/json.c; sourceTree = "<group>"; };
-		73F564321DA17DD700F809F2 /* jsparse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsparse.c; path = mujs/jsparse.c; sourceTree = "<group>"; };
-		73F564331DA17DD700F809F2 /* jsparse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsparse.h; path = mujs/jsparse.h; sourceTree = "<group>"; };
-		73F564351DA17DFE00F809F2 /* jsproperty.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsproperty.c; path = mujs/jsproperty.c; sourceTree = "<group>"; };
-		73F564371DA17E2600F809F2 /* jsregexp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsregexp.c; path = mujs/jsregexp.c; sourceTree = "<group>"; };
-		73F564391DA17E4000F809F2 /* jsrun.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsrun.c; path = mujs/jsrun.c; sourceTree = "<group>"; };
-		73F5643A1DA17E4000F809F2 /* jsrun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsrun.h; path = mujs/jsrun.h; sourceTree = "<group>"; };
-		73F5643C1DA17E7600F809F2 /* jsstate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsstate.c; path = mujs/jsstate.c; sourceTree = "<group>"; };
-		73F5643E1DA17E8E00F809F2 /* jsstring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsstring.c; path = mujs/jsstring.c; sourceTree = "<group>"; };
-		73F564401DA17EB000F809F2 /* jsvalue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsvalue.c; path = mujs/jsvalue.c; sourceTree = "<group>"; };
-		73F564411DA17EB000F809F2 /* jsvalue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsvalue.h; path = mujs/jsvalue.h; sourceTree = "<group>"; };
-		73F564431DA17EE200F809F2 /* mujs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mujs.h; path = mujs/mujs.h; sourceTree = "<group>"; };
-		73F564471DA17F5600F809F2 /* regexp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = regexp.c; path = mujs/regexp.c; sourceTree = "<group>"; };
-		73F564481DA17F5600F809F2 /* regexp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = regexp.h; path = mujs/regexp.h; sourceTree = "<group>"; };
-		73F5644A1DA17F7A00F809F2 /* utf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = utf.c; path = mujs/utf.c; sourceTree = "<group>"; };
-		73F5644B1DA17F7A00F809F2 /* utf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utf.h; path = mujs/utf.h; sourceTree = "<group>"; };
-		73F5644D1DA17FA200F809F2 /* utftype.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = utftype.c; path = mujs/utftype.c; sourceTree = "<group>"; };
-		73F564501DA180A800F809F2 /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = AUTHORS; path = mujs/AUTHORS; sourceTree = "<group>"; };
-		73F564511DA180C900F809F2 /* jsarray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsarray.c; path = mujs/jsarray.c; sourceTree = "<group>"; };
-		73F564531DA180E000F809F2 /* jsboolean.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsboolean.c; path = mujs/jsboolean.c; sourceTree = "<group>"; };
-		73F564551DA180F900F809F2 /* jsbuiltin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsbuiltin.c; path = mujs/jsbuiltin.c; sourceTree = "<group>"; };
-		73F564561DA180F900F809F2 /* jsbuiltin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jsbuiltin.h; path = mujs/jsbuiltin.h; sourceTree = "<group>"; };
-		73F564581DA1811600F809F2 /* jscompile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jscompile.c; path = mujs/jscompile.c; sourceTree = "<group>"; };
-		73F564591DA1811600F809F2 /* jscompile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jscompile.h; path = mujs/jscompile.h; sourceTree = "<group>"; };
-		73F5645B1DA1814000F809F2 /* jsdate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsdate.c; path = mujs/jsdate.c; sourceTree = "<group>"; };
-		73F5645D1DA1815700F809F2 /* jsdtoa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsdtoa.c; path = mujs/jsdtoa.c; sourceTree = "<group>"; };
-		73F5645F1DA1818C00F809F2 /* jsdump.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsdump.c; path = mujs/jsdump.c; sourceTree = "<group>"; };
-		73F564611DA181A000F809F2 /* jserror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jserror.c; path = mujs/jserror.c; sourceTree = "<group>"; };
-		73F564631DA181B900F809F2 /* jsfunction.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsfunction.c; path = mujs/jsfunction.c; sourceTree = "<group>"; };
-		73F564651DA181D200F809F2 /* jsgc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jsgc.c; path = mujs/jsgc.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7350FA091D89BB4C00E199C0 /* libcurl.a in Frameworks */,
+				73571CE31E055F6E00D90158 /* libcurl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,8 +46,7 @@
 		7350F9F01D89B44200E199C0 = {
 			isa = PBXGroup;
 			children = (
-				73F563FF1DA178A200F809F2 /* mujs */,
-				7350FA081D89BB4C00E199C0 /* libcurl.a */,
+				73571CE21E055F6E00D90158 /* libcurl.a */,
 				7357505A1DA22FD00010DCC2 /* CMakeLists.txt */,
 				7350F9FB1D89B44200E199C0 /* zippy_dl */,
 				7350F9FA1D89B44200E199C0 /* Products */,
@@ -135,58 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				7357505B1DA231960010DCC2 /* CMakeLists.txt */,
-				73F563EE1DA105C200F809F2 /* mujs_bridge.cpp */,
-				73F563EF1DA105C200F809F2 /* mujs_bridge.hpp */,
 				7350F9FC1D89B44200E199C0 /* main.cpp */,
 			);
 			path = zippy_dl;
-			sourceTree = "<group>";
-		};
-		73F563FF1DA178A200F809F2 /* mujs */ = {
-			isa = PBXGroup;
-			children = (
-				7357505C1DA233170010DCC2 /* CMakeLists.txt */,
-				735750571DA203B60010DCC2 /* astnames.h */,
-				73F564501DA180A800F809F2 /* AUTHORS */,
-				73F564511DA180C900F809F2 /* jsarray.c */,
-				73F564531DA180E000F809F2 /* jsboolean.c */,
-				73F564551DA180F900F809F2 /* jsbuiltin.c */,
-				73F564561DA180F900F809F2 /* jsbuiltin.h */,
-				73F564581DA1811600F809F2 /* jscompile.c */,
-				73F564591DA1811600F809F2 /* jscompile.h */,
-				73F5645B1DA1814000F809F2 /* jsdate.c */,
-				73F5645D1DA1815700F809F2 /* jsdtoa.c */,
-				73F5645F1DA1818C00F809F2 /* jsdump.c */,
-				73F564611DA181A000F809F2 /* jserror.c */,
-				73F564631DA181B900F809F2 /* jsfunction.c */,
-				73F564651DA181D200F809F2 /* jsgc.c */,
-				73F564241DA17C8F00F809F2 /* jsi.h */,
-				73F564251DA17CC500F809F2 /* jsintern.c */,
-				73F564271DA17CE700F809F2 /* jslex.c */,
-				73F564281DA17CE700F809F2 /* jslex.h */,
-				73F5642A1DA17D3300F809F2 /* jsmath.c */,
-				73F5642C1DA17D6B00F809F2 /* jsnumber.c */,
-				73F5642E1DA17D9E00F809F2 /* jsobject.c */,
-				73F564301DA17DB600F809F2 /* json.c */,
-				73F564321DA17DD700F809F2 /* jsparse.c */,
-				73F564331DA17DD700F809F2 /* jsparse.h */,
-				73F564351DA17DFE00F809F2 /* jsproperty.c */,
-				73F564371DA17E2600F809F2 /* jsregexp.c */,
-				73F564391DA17E4000F809F2 /* jsrun.c */,
-				73F5643A1DA17E4000F809F2 /* jsrun.h */,
-				73F5643C1DA17E7600F809F2 /* jsstate.c */,
-				73F5643E1DA17E8E00F809F2 /* jsstring.c */,
-				73F564401DA17EB000F809F2 /* jsvalue.c */,
-				73F564411DA17EB000F809F2 /* jsvalue.h */,
-				73F564431DA17EE200F809F2 /* mujs.h */,
-				73F564471DA17F5600F809F2 /* regexp.c */,
-				73F564481DA17F5600F809F2 /* regexp.h */,
-				73F5644A1DA17F7A00F809F2 /* utf.c */,
-				73F5644B1DA17F7A00F809F2 /* utf.h */,
-				73F5644D1DA17FA200F809F2 /* utftype.c */,
-				735750581DA203F40010DCC2 /* opnames.h */,
-			);
-			name = mujs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,34 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73F5642D1DA17D6B00F809F2 /* jsnumber.c in Sources */,
-				73F564291DA17CE700F809F2 /* jslex.c in Sources */,
-				73F5643B1DA17E4000F809F2 /* jsrun.c in Sources */,
-				73F5643F1DA17E8E00F809F2 /* jsstring.c in Sources */,
-				73F5645A1DA1811600F809F2 /* jscompile.c in Sources */,
-				73F564621DA181A000F809F2 /* jserror.c in Sources */,
-				73F564361DA17DFE00F809F2 /* jsproperty.c in Sources */,
-				73F564521DA180C900F809F2 /* jsarray.c in Sources */,
-				73F564381DA17E2600F809F2 /* jsregexp.c in Sources */,
-				73F564541DA180E000F809F2 /* jsboolean.c in Sources */,
-				73F5642B1DA17D3300F809F2 /* jsmath.c in Sources */,
-				73F564341DA17DD700F809F2 /* jsparse.c in Sources */,
-				73F5645E1DA1815700F809F2 /* jsdtoa.c in Sources */,
-				73F564261DA17CC500F809F2 /* jsintern.c in Sources */,
-				73F5642F1DA17D9E00F809F2 /* jsobject.c in Sources */,
-				73F564491DA17F5600F809F2 /* regexp.c in Sources */,
 				7350F9FD1D89B44200E199C0 /* main.cpp in Sources */,
-				73F5644C1DA17F7A00F809F2 /* utf.c in Sources */,
-				73F5643D1DA17E7600F809F2 /* jsstate.c in Sources */,
-				73F563F01DA105C200F809F2 /* mujs_bridge.cpp in Sources */,
-				73F564601DA1818C00F809F2 /* jsdump.c in Sources */,
-				73F564421DA17EB000F809F2 /* jsvalue.c in Sources */,
-				73F5645C1DA1814000F809F2 /* jsdate.c in Sources */,
-				73F564641DA181B900F809F2 /* jsfunction.c in Sources */,
-				73F564311DA17DB600F809F2 /* json.c in Sources */,
-				73F564571DA180F900F809F2 /* jsbuiltin.c in Sources */,
-				73F5644E1DA17FA200F809F2 /* utftype.c in Sources */,
-				73F564661DA181D200F809F2 /* jsgc.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +232,7 @@
 					/usr/local/lib,
 					/usr/local/Cellar/curl/7.50.3/lib,
 					/usr/local/Cellar/spidermonkey45/45.0.2/lib,
+					/usr/local/Cellar/curl/7.51.0/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -391,6 +246,7 @@
 					/usr/local/lib,
 					/usr/local/Cellar/curl/7.50.3/lib,
 					/usr/local/Cellar/spidermonkey45/45.0.2/lib,
+					/usr/local/Cellar/curl/7.51.0/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

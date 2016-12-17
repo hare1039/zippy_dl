@@ -51,7 +51,7 @@ int dl_zippy(std::string zippy_page_url)
     CURL *handle = curl_easy_init();
 
     if(!handle)
-        return FAILED;
+        throw std::runtime_error("curl_easy_init() failed!");
 
 
     curl_easy_setopt(handle, CURLOPT_URL, zippy_page_url.c_str());
@@ -59,7 +59,7 @@ int dl_zippy(std::string zippy_page_url)
     curl_easy_setopt(handle, CURLOPT_WRITEDATA, &buffer);
     curl_easy_setopt(handle, CURLOPT_COOKIEFILE, "");
     curl_easy_setopt(handle, CURLOPT_VERBOSE, 0);
-    curl_easy_setopt(handle, CURLOPT_USERAGENT, "Mozilla/5.0 Gecko/20100101 Firefox/47.0");
+    curl_easy_setopt(handle, CURLOPT_USERAGENT, "Mozilla/5.0 Gecko/20100101 Firefox/49.0");
 
     CURLcode res = curl_easy_perform(handle);
     if(res != CURLE_OK)
@@ -118,13 +118,12 @@ int dl_zippy(std::string zippy_page_url)
 
 int main(int argc, char *argv[])
 {
-    //if(! spidermonkey_init()) exit(1);
-    std::srand(static_cast<unsigned int> (std::time(0)));
+    
     extern char *optarg;
     extern int optind, opterr, optopt;
     int option_code;
     std::vector<std::string> zippy_url;
-    while ((option_code = getopt(argc, argv, "c:hl:")) != -1)
+    while ((option_code = getopt(argc, argv, "hl:")) != -1)
     {
         switch(option_code)
         {
@@ -132,7 +131,6 @@ int main(int argc, char *argv[])
                 std::cout << "usage:\n"
                           << "  zippy_dl [options] zippy-urls\n"
                           << "options:\n"
-                          << "  -c string    -- for configure file, default : ~/.zippy_dl.config\n"
                           << "  -l string    -- read from list\n";
                 break;
 
@@ -144,9 +142,9 @@ int main(int argc, char *argv[])
                     std::cerr << optarg <<" can't open\n";
                     exit(-1);
                 }
-                std::string s;
-                while(ifs >> s)
+                for(std::string s; ifs >> s;)
                     zippy_url.push_back(s);
+                ifs.close();
             }
             case ':':
                 std::cout << optopt << " without filename\n";
