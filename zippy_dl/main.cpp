@@ -44,6 +44,12 @@ std::string exec(const char* cmd)
     return result;
 }
 
+class wget_options
+{
+    public:
+    std::string dir;
+}opt;
+
 int dl_zippy(std::string zippy_page_url)
 {
 
@@ -110,7 +116,7 @@ int dl_zippy(std::string zippy_page_url)
                   .append(exec(("phantomjs " + name + ".js; " + "exit 0;").c_str()).substr(7) );
     std::remove((name + ".js").c_str()); // delete file
     std::remove((name + ".html").c_str());
-    exec( ("wget " + zippy_file_url + " --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie + "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/49.0' 2>/dev/null && exit 0;").c_str() );
+    exec( ("wget " + zippy_file_url + " --directory-prefix='" + opt.dir + "'" + " --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie + "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/50.0' 2>/dev/null && exit 0;").c_str() );
 
     return SUCCESS;
 }
@@ -123,6 +129,7 @@ int main(int argc, char *argv[])
     extern int optind, opterr, optopt;
     int option_code;
     std::vector<std::string> zippy_url;
+    opt.dir = "./";
     while ((option_code = getopt(argc, argv, "hl:")) != -1)
     {
         switch(option_code)
@@ -132,6 +139,9 @@ int main(int argc, char *argv[])
                           << "  zippy_dl [options] zippy-urls\n"
                           << "options:\n"
                           << "  -l string    -- read from list\n";
+                break;
+            case 'p':
+                opt.dir = optarg;
                 break;
 
             case 'l':
