@@ -65,7 +65,7 @@ int dl_zippy(std::string zippy_page_url)
     curl_easy_setopt(handle, CURLOPT_WRITEDATA, &buffer);
     curl_easy_setopt(handle, CURLOPT_COOKIEFILE, "");
     curl_easy_setopt(handle, CURLOPT_VERBOSE, 0);
-    curl_easy_setopt(handle, CURLOPT_USERAGENT, "Mozilla/5.0 Gecko/20100101 Firefox/49.0");
+    curl_easy_setopt(handle, CURLOPT_USERAGENT, "Mozilla/5.0 Gecko/20100101 Firefox/50.0");
 
     CURLcode res = curl_easy_perform(handle);
     if(res != CURLE_OK)
@@ -116,7 +116,7 @@ int dl_zippy(std::string zippy_page_url)
                   .append(exec(("phantomjs " + name + ".js; " + "exit 0;").c_str()).substr(7) );
     std::remove((name + ".js").c_str()); // delete file
     std::remove((name + ".html").c_str());
-    exec( ("wget " + zippy_file_url + " --directory-prefix='" + opt.dir + "'" + " --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie + "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/50.0' 2>/dev/null && exit 0;").c_str() );
+    exec( ("wget --directory-prefix='" + opt.dir + "' --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie + "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/50.0' " + zippy_file_url + " 2>/dev/null && exit 0;").c_str() );
 
     return SUCCESS;
 }
@@ -124,13 +124,12 @@ int dl_zippy(std::string zippy_page_url)
 
 int main(int argc, char *argv[])
 {
-    
     extern char *optarg;
     extern int optind, opterr, optopt;
     int option_code;
     std::vector<std::string> zippy_url;
     opt.dir = "./";
-    while ((option_code = getopt(argc, argv, "hl:")) != -1)
+    while ((option_code = getopt(argc, argv, "hp:l:")) != -1)
     {
         switch(option_code)
         {
@@ -138,10 +137,11 @@ int main(int argc, char *argv[])
                 std::cout << "usage:\n"
                           << "  zippy_dl [options] zippy-urls\n"
                           << "options:\n"
-                          << "  -l string    -- read from list\n";
+                          << "  -l string    -- read from list\n"
+                          << "  -p string    -- download directory\n";
                 break;
             case 'p':
-                opt.dir = optarg;
+                opt.dir = std::string(optarg);
                 break;
 
             case 'l':
