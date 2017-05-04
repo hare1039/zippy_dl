@@ -14,6 +14,8 @@ example:
     cd zippy_dl && mkdir build && cd build
 
     cmake ..
+    
+    make
 
 And that's it!
 
