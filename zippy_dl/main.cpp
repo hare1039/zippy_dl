@@ -6,14 +6,9 @@
 #include <algorithm>
 #include <stdexcept>
 #include <cstdlib>
-#include <cstdio>
 #include <cstring>
 
 #include <unistd.h>
-#include <sys/types.h>
-#include <pwd.h>
-
-
 #include <curl/curl.h>
 
 #define SUCCESS 0
@@ -168,11 +163,11 @@ int main(int argc, char *argv[])
     for(;optind<argc; optind++)
         zippy_url.push_back(std::string(argv[optind]));
 
-    std::vector<std::thread *> sync_dl;
+    std::vector<std::thread *> async_dl;
     for(auto i : zippy_url)
-        sync_dl.push_back(new std::thread(dl_zippy, i));
+        async_dl.push_back(new std::thread(dl_zippy, i));
 
-    for(auto &i : sync_dl)
+    for(auto &i : async_dl)
     {
         i->join();
         delete i;
