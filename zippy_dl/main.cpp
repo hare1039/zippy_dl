@@ -111,8 +111,9 @@ int dl_zippy(std::string zippy_page_url)
                   .append(exec(("phantomjs " + name + ".js; " + "exit 0;").c_str()).substr(7) );
     std::remove((name + ".js").c_str()); // delete file
     std::remove((name + ".html").c_str());
-    exec( ("wget --directory-prefix='" + opt.dir + "' --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie + "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/50.0' " + zippy_file_url + " 2>/dev/null && exit 0;").c_str() );
-
+    auto result = exec( ("wget -N --directory-prefix='" + opt.dir + "' --referer='" + zippy_page_url + "' --cookies=off --header \"" + zippy_cookie + "\" --user-agent='Mozilla/5.0 Gecko/20100101 Firefox/50.0' " + zippy_file_url + " 2>/dev/null && exit 0;").c_str() );
+    if (result.find("text/html") != std::string::npos)
+	    dl_zippy(zippy_page_url);
     return SUCCESS;
 }
 
